@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty Bakery Company | Our Story, Cakes & Customers</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#fffaf7;color:#3a2a2a}
+h1,h2,h3{font-family:'Playfair Display',serif}
+a{text-decoration:none}
+.topbar{background:#ff6fa0;color:#fff;text-align:center;padding:8px;font-size:13px}
+.topbar a{color:#fff;text-decoration:underline;font-weight:600}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 6%;background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.06)}
+.logo{font-size:26px;font-weight:700;color:#d6336c;font-family:'Playfair Display'}
+.logo span{color:#ff8a65}
+.navlinks{display:flex;gap:28px;align-items:center}
+.navlinks a{color:#5a3a3a;font-weight:500;font-size:14px}
+.btn-pink{background:linear-gradient(135deg,#ff6fa0,#d6336c);color:#fff!important;padding:11px 24px;border-radius:30px;box-shadow:0 6px 18px rgba(214,51,108,.3)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:60px 6% 40px;background:linear-gradient(180deg,#fff0f5 0%, #fffaf7 100%)}
+.hero-badge{background:#ffe3ec;color:#d6336c;display:inline-block;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:14px}
+.hero h1{font-size:54px;line-height:1.1;margin-bottom:16px;color:#2b1a1a}
+.hero h1 i{color:#ff6fa0;font-style:italic}
+.hero p{color:#7a5a5a;line-height:1.7;margin-bottom:26px;font-size:15px}
+.hero-stats{display:flex;gap:28px;margin-top:10px}
+.stat h3{font-size:28px;color:#d6336c}
+.stat p{font-size:12px;margin:0;color:#9a7a7a}
+.hero-img{position:relative}
+.hero-img img{width:100%;border-radius:24px;box-shadow:0 20px 50px rgba(0,0,0,.12)}
+.hero-card{position:absolute;bottom:-20px;left:-20px;background:#fff;padding:16px 18px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.12);display:flex;gap:12px;align-items:center}
+.hero-card img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.section{padding:80px 6%}
+.section-head{text-align:center;max-width:620px;margin:0 auto 50px}
+.section-head h2{font-size:38px;margin-bottom:10px}
+.section-head p{color:#8a6a6a;font-size:14px}
+.cakes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cake-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.cake-card img{width:100%;height:230px;object-fit:cover}
+.cake-info{padding:16px 18px}
+.price-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.price{color:#d6336c;font-weight:700}
+.stars{color:#ffb400;font-size:13px}
+.rates{background:#2b1a1a;color:#fff;border-radius:30px;padding:60px 6%;margin:0 3%}
+.rates-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.rate-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:28px;text-align:center}
+.rate-card .big{font-size:42px;font-weight:700;color:#ff9ab5;margin:10px 0}
+.rate-card ul{list-style:none;text-align:left;margin:18px 0;line-height:2;font-size:13px;color:#e8c9c9}
+.rate-card ul li::before{content:"✓ ";color:#ff6fa0;font-weight:700}
+.rate-card .btn{width:100%;display:block;background:#fff;color:#2b1a1a;padding:12px;border-radius:30px;font-weight:600;margin-top:10px}
+.rewards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.reward-box{background:#fff;border-radius:18px;padding:28px 20px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.05);border:1px solid #ffe1ea}
+.reward-box .icon{width:56px;height:56px;background:#fff0f5;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;font-size:26px}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi{background:#fff;padding:22px;border-radius:18px;box-shadow:0 6px 24px rgba(0,0,0,.04)}
+.testi p{font-size:13px;line-height:1.6;color:#6a4a4a;margin-bottom:14px}
+.testi-foot{display:flex;gap:12px;align-items:center}
+.testi-foot img{width:42px;height:42px;border-radius:50%}
+.cta{text-align:center;background:linear-gradient(135deg,#ff6fa0,#ff8a65);color:#fff;padding:70px 6%;border-radius:30px;margin:40px 3%}
+.cta h2{font-size:38px;margin-bottom:12px}
+.cta a{background:#fff;color:#d6336c;padding:14px 32px;border-radius:30px;font-weight:700;display:inline-block}
+footer{text-align:center;padding:30px;color:#9a7a7a;font-size:12px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.cakes,.rates-grid,.rewards,.testi-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">This is Company Page — Main store → <a href="https://beautybakery.name.ng">beautybakery.name.ng</a></div>
+
+<nav>
+<div class="logo">Beauty<span>Bakery</span></div>
+<div class="navlinks">
+<a href="#cakes">Our Cakes</a>
+<a href="#rates">Rates</a>
+<a href="#rewards">Rewards</a>
+<a href="#customers">Customers</a>
+<a href="https://beautybakery.name.ng" class="btn-pink">Shop Now →</a>
+</div>
+</nav>
+
+<section class="hero">
+<div>
+<div class="hero-badge">COMPANY.BEAUTYBAKERY.NAME.NG — OFFICIAL</div>
+<h1>We Bake <i>Happiness</i> Into Every Slice</h1>
+<p>Welcome to <b>Beauty Bakery Company</b>. Before you enter our main store at <b>beautybakery.name.ng</b>, get to know who we are, what we've baked, how we are rated by 2,000+ happy customers.</p>
+<div style="display:flex;gap:14px">
+<a href="https://beautybakery.name.ng" class="btn-pink">Enter Main Website</a>
+<a href="#cakes" style="padding:11px 24px;border:1px solid #f0c0c0;border-radius:30px;color:#5a3a3a;font-weight:600">See Our Work</a>
+</div>
+<div class="hero-stats">
+<div class="stat"><h3>2k+</h3><p>TRUSTED CLIENTS</p></div>
+<div class="stat"><h3>4.9★</h3><p>AVERAGE RATING</p></div>
+<div class="stat"><h3>500+</h3><p>CAKES BAKED</p></div>
+</div>
+</div>
+<div class="hero-img">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800" alt="Cake">
+<div class="hero-card">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100">
+<div><b>Verified by Customers</b><br><small>⭐⭐⭐⭐⭐ 1,200+ 5-star reviews</small></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="cakes">
+<div class="section-head"><h2>Cakes We've Done</h2><p>Real cakes baked by Beauty Bakery — birthdays, weddings, surprise treats.</p></div>
+<div class="cakes">
+<div class="cake-card"><img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=600"><div class="cake-info"><h3>Strawberry Dream Birthday</h3><span>Birthday • 2kg</span><div class="price-row"><div class="price">₦18,500</div><div class="stars">★★★★★ (98)</div></div></div></div>
+<div class="cake-card"><img src="https://images.unsplash.com/photo-1588195538326-c2b1e32f0a4d?w=600"><div class="cake-info"><h3>Chocolate Fudge Wedding</h3><span>Wedding • 3-tier</span><div class="price-row"><div class="price">₦85,000</div><div class="stars">★★★★★ (142)</div></div></div></div>
+<div class="cake-card"><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600"><div class="cake-info"><h3>Vanilla Cupcake Box (12pcs)</h3><span>Cupcakes • Gift Box</span><div class="price-row"><div class="price">₦9,000</div><div class="stars">★★★★★ (210)</div></div></div></div>
+<div class="cake-card"><img src="https://images.unsplash.com/photo-1605807646983-377bc5a76493?w=600"><div class="cake-info"><h3>Red Velvet Supreme</h3><span>Celebration • 1.5kg</span><div class="price-row"><div class="price">₦15,000</div><div class="stars">★★★★★ (76)</div></div></div></div>
+<div class="cake-card"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600"><div class="cake-info"><h3>Kids Cartoon Cake</h3><span>Kids • Fondant Design</span><div class="price-row"><div class="price">₦22,000</div><div class="stars">★★★★★ (64)</div></div></div></div>
+<div class="cake-card"><img src="https://images.unsplash.com/photo-1519869325930-281384150729?w=600"><div class="cake-info"><h3>Mini Anniversary Cake</h3><span>Anniversary • 1kg</span><div class="price-row"><div class="price">₦12,500</div><div class="stars">★★★★★ (51)</div></div></div></div>
+</div>
+</section>
+
+<section class="rates" id="rates">
+<div class="section-head" style="color:#fff"><h2 style="color:#fff">Our Rates</h2><p style="color:#e8c9c9">Transparent pricing. No hidden charges.</p></div>
+<div class="rates-grid">
+<div class="rate-card"><h3>Starter</h3><div class="big">₦9k+</div><ul><li>Cupcakes, Bento cakes</li><li>Same day delivery</li><li>Free small card</li></ul><a href="https://beautybakery.name.ng" class="btn">Order Starter</a></div>
+<div class="rate-card" style="background:#fff;color:#2b1a1a"><h3>Best Seller</h3><div class="big" style="color:#d6336c">₦15k - ₦35k</div><ul style="color:#5a3a3a"><li>Birthday & celebration cakes</li><li>1kg - 3kg cakes</li><li>Custom design + photo print</li><li>Free delivery in Lagos</li></ul><a href="https://beautybakery.name.ng" class="btn" style="background:#d6336c;color:#fff">Order Now</a></div>
+<div class="rate-card"><h3>Premium</h3><div class="big">₦70k+</div><ul><li>2-5 tier wedding cakes</li><li>Tasting session included</li><li>Event setup & support</li></ul><a href="https://beautybakery.name.ng" class="btn">Book Consultation</a></div>
+</div>
+</section>
+
+<section class="section" id="rewards">
+<div class="section-head"><h2>Rewards & Loyalty</h2><p>We give back every time you shop.</p></div>
+<div class="rewards">
+<div class="reward-box"><div class="icon">🎁</div><h4>Welcome Bonus</h4><p>10% off first order on main site.</p></div>
+<div class="reward-box"><div class="icon">⭐</div><h4>Loyalty Points</h4><p>100 points per ₦10k. 1000 points = free bento cake.</p></div>
+<div class="reward-box"><div class="icon">👯</div><h4>Refer & Earn</h4><p>Refer a friend & both get ₦2,000 off.</p></div>
+<div class="reward-box"><div class="icon">🎂</div><h4>Birthday Freebie</h4><p>Free 6pcs cupcakes on YOUR birthday.</p></div>
+</div>
+</section>
+
+<section class="section" id="customers" style="background:#fffaf2">
+<div class="section-head"><h2>Trusted by 2,000+ Happy Customers</h2><p>Rated 4.9/5 on WhatsApp, Instagram & Google.</p></div>
+<div class="testi-grid">
+<div class="testi"><p>"Best in Lagos! My daughter’s birthday cake was beautiful and delicious."</p><div class="testi-foot"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100"><div><b>Chioma A.</b><small>Lekki • Verified</small></div></div></div>
+<div class="testi"><p>"Wedding cake was on time, neat, and tasted amazing. Honest rate!"</p><div class="testi-foot"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100"><div><b>Tunde & Amaka</b><small>Wedding • 3-tier</small></div></div></div>
+<div class="testi"><p>"I buy cupcakes every Friday. Reward system is real — got free bento last month!"</p><div class="testi-foot"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100"><div><b>Folake J.</b><small>Yaba • Loyal</small></div></div></div>
+</div>
+</section>
+
+<div class="cta">
+<h2>Ready to Taste Happiness?</h2>
+<p>This is our company page at <b>company.beautybakery.name.ng</b>. Full shop is on main domain.</p>
+<a href="https://beautybakery.name.ng">Go to beautybakery.name.ng →</a>
+</div>
+
+<footer>© 2026 Beauty Bakery Company — company.beautybakery.name.ng • Main: beautybakery.name.ng</footer>
+</body>
+</html>
